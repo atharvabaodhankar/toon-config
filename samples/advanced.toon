@@ -1,0 +1,60 @@
+## Advanced TOON Configuration
+## Demonstrates complex nested structures
+
+OBJ(
+   STR(appName, "Production API"),
+   STR(version, "2.1.0"),
+   STR(environment, "production"),
+   
+   ## Server Configuration
+   OBJ(server,
+      STR(host, "0.0.0.0"),
+      INT(port, 8080),
+      INT(timeout, 30000),
+      BOOL(compression, true)
+   ),
+   
+   ## Database Configuration
+   OBJ(database,
+      STR(type, "postgresql"),
+      STR(host, "db.example.com"),
+      INT(port, 5432),
+      STR(name, "prod_db"),
+      OBJ(pool,
+         INT(min, 5),
+         INT(max, 20),
+         INT(acquireTimeout, 60000)
+      ),
+      BOOL(ssl, true)
+   ),
+   
+   ## Redis Cache
+   OBJ(cache,
+      STR(host, "redis.example.com"),
+      INT(port, 6379),
+      INT(ttl, 3600),
+      BOOL(enabled, true)
+   ),
+   
+   ## Feature Flags
+   OBJ(features,
+      BOOL(authentication, true),
+      BOOL(rateLimit, true),
+      BOOL(analytics, true),
+      BOOL(betaFeatures, false)
+   ),
+   
+   ## API Endpoints
+   LIST(allowedOrigins,
+      "https://app.example.com",
+      "https://admin.example.com",
+      "https://mobile.example.com"
+   ),
+   
+   ## Logging
+   OBJ(logging,
+      STR(level, "info"),
+      BOOL(colorize, false),
+      LIST(transports, "console", "file", "cloudwatch")
+   )
+)
