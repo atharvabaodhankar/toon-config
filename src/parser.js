@@ -71,7 +71,7 @@ class Parser {
   parseObject() {
     const obj = {};
     
-    while (this.peek().type !== TokenType.RPAREN) {
+    while (this.peek().type !== TokenType.RPAREN && this.peek().type !== TokenType.EOF) {
       const token = this.peek();
       
       if (token.type === TokenType.KEYWORD) {
@@ -81,9 +81,17 @@ class Parser {
         const key = this.expect(TokenType.IDENTIFIER).value;
         this.expect(TokenType.COMMA);
         
-        const value = this.parseValue();
-        obj[key] = value;
+        // Parse the value based on keyword type
+        let value;
+        if (keyword.value === 'OBJ') {
+          value = this.parseObject();
+        } else if (keyword.value === 'LIST') {
+          value = this.parseList();
+        } else {
+          value = this.parseValue();
+        }
         
+        obj[key] = value;
         this.expect(TokenType.RPAREN);
       } else {
         throw new Error(
@@ -96,14 +104,13 @@ class Parser {
       }
     }
     
-    this.expect(TokenType.RPAREN);
     return obj;
   }
 
   parseList() {
     const list = [];
     
-    while (this.peek().type !== TokenType.RPAREN) {
+    while (this.peek().type !== TokenType.RPAREN && this.peek().type !== TokenType.EOF) {
       list.push(this.parseValue());
       
       if (this.peek().type === TokenType.COMMA) {
@@ -111,7 +118,6 @@ class Parser {
       }
     }
     
-    this.expect(TokenType.RPAREN);
     return list;
   }
 
