@@ -1,0 +1,23 @@
+## Sample TOON Configuration File
+## This demonstrates the TOON format syntax
+
+OBJ(
+   STR(appName, "Polystudi"),
+   BOOL(debug, true),
+   INT(port, 3001),
+   LIST(modules, "auth", "api", "db"),
+   OBJ(database,
+      STR(host, "localhost"),
+      INT(port, 27017),
+      STR(user, "admin")
+   ),
+   OBJ(features,
+      BOOL(enableAuth, true),
+      BOOL(enableCache, false),
+      INT(maxConnections, 100)
+   ),
+   LIST(allowedOrigins,
+      "http://localhost:3000",
+      "https://example.com"
+   )
+)

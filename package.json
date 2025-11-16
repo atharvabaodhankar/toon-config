@@ -1,0 +1,24 @@
+{
+  "name": "toon-config",
+  "version": "1.0.0",
+  "description": "A modern configuration engine using Token-Oriented Object Notation (TOON)",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "test": "node test/basic.test.js"
+  },
+  "keywords": [
+    "config",
+    "configuration",
+    "toon",
+    "parser",
+    "lexer",
+    "yaml-alternative",
+    "json-alternative"
+  ],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
