@@ -42,13 +42,17 @@ class Serializer {
     
     const entries = Object.entries(obj).map(([key, value]) => {
       const type = this.inferType(value);
-      const serializedValue = this.serialize(value, depth + 1);
       
-      if (type === 'OBJ' || type === 'LIST') {
-        return `${innerSpaces}${type}(${key},\n${innerSpaces}${this.indent > 0 ? '   ' : ''}${serializedValue}\n${innerSpaces})`;
+      if (type === 'OBJ') {
+        const objContent = this.serializeObject(value, depth + 1);
+        return `${innerSpaces}${type}(${key},\n${objContent}\n${innerSpaces})`;
+      } else if (type === 'LIST') {
+        const listContent = this.serializeList(value, depth + 1);
+        return `${innerSpaces}${type}(${key}, ${listContent})`;
+      } else {
+        const serializedValue = this.serialize(value, depth + 1);
+        return `${innerSpaces}${type}(${key}, ${serializedValue})`;
       }
-      
-      return `${innerSpaces}${type}(${key}, ${serializedValue})`;
     });
     
     if (depth === 0) {
@@ -59,14 +63,26 @@ class Serializer {
   }
 
   serializeList(arr, depth = 0) {
-    const spaces = ' '.repeat(depth * this.indent);
-    const items = arr.map(item => this.serialize(item, depth + 1));
+    const items = arr.map(item => {
+      // For primitive values in lists, serialize directly without wrapping
+      const type = typeof item;
+      if (type === 'string') {
+        return `"${this.escapeString(item)}"`;
+      } else if (type === 'number' || type === 'boolean') {
+        return item.toString();
+      } else if (Array.isArray(item)) {
+        return this.serializeList(item, depth + 1);
+      } else if (type === 'object' && item !== null) {
+        return this.serializeObject(item, depth + 1);
+      }
+      return '""';
+    });
     
     if (items.length === 0) {
-      return 'LIST()';
+      return '';
     }
     
-    return `LIST(${items.join(', ')})`;
+    return items.join(', ');
   }
 
   inferType(value) {

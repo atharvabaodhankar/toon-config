@@ -1,0 +1,17 @@
+## Database configuration example
+OBJ(
+   STR(type, "postgresql"),
+   STR(host, "localhost"),
+   INT(port, 5432),
+   STR(database, "myapp_db"),
+   OBJ(credentials,
+      STR(username, "admin"),
+      STR(password, "secret123")
+   ),
+   OBJ(pool,
+      INT(min, 2),
+      INT(max, 10),
+      INT(idleTimeoutMillis, 30000)
+   ),
+   BOOL(ssl, true)
+)

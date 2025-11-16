@@ -1,0 +1,6 @@
+## Simple TOON example
+OBJ(
+   STR(name, "MyApp"),
+   INT(port, 3000),
+   BOOL(debug, false)
+)
