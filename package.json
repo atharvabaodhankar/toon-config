@@ -1,11 +1,12 @@
 {
   "name": "toon-config",
   "version": "1.0.0",
-  "description": "A modern configuration engine using Token-Oriented Object Notation (TOON)",
+  "description": "A modern configuration engine using Token-Oriented Object Notation (TOON) - a type-safe alternative to YAML and JSON",
   "main": "src/index.js",
   "type": "module",
   "scripts": {
-    "test": "node test/basic.test.js"
+    "test": "node test/basic.test.js",
+    "example": "node examples/usage.js"
   },
   "keywords": [
     "config",
@@ -14,11 +15,29 @@
     "parser",
     "lexer",
     "yaml-alternative",
-    "json-alternative"
+    "json-alternative",
+    "type-safe",
+    "token",
+    "notation",
+    "config-parser",
+    "config-loader"
   ],
   "author": "",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/toon-config.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/toon-config/issues"
+  },
+  "homepage": "https://github.com/yourusername/toon-config#readme",
   "engines": {
     "node": ">=14.0.0"
-  }
+  },
+  "files": [
+    "src/",
+    "README.md",
+    "LICENSE"
+  ]
 }
