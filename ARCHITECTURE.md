@@ -283,6 +283,14 @@ toon-config/
     └── usage.js       # Usage examples
 ```
 
+## Repository
+
+GitHub: [atharvabaodhankar/toon-config](https://github.com/atharvabaodhankar/toon-config)
+
 ## Contributing
 
 See individual component files for detailed implementation notes and inline documentation.
+
+## Author
+
+Created by [@op_athu_17](https://www.npmjs.com/~op_athu_17)

@@ -28,4 +28,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Clear error messages with line and column numbers
 - Type-safe token validation
 
-[1.0.0]: https://github.com/yourusername/toon-config/releases/tag/v1.0.0
+[1.0.0]: https://github.com/atharvabaodhankar/toon-config/releases/tag/v1.0.0

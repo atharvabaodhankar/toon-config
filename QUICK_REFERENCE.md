@@ -183,3 +183,8 @@ See the `samples/` directory for more examples:
 - `config.toon` - Application configuration
 - `database.toon` - Database settings
 - `advanced.toon` - Complex nested structure
+
+## Links
+
+- GitHub: [atharvabaodhankar/toon-config](https://github.com/atharvabaodhankar/toon-config)
+- npm: [@op_athu_17](https://www.npmjs.com/~op_athu_17)

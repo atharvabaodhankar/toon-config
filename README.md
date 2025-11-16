@@ -209,13 +209,21 @@ npm test
 | Clear errors | ✅ | ❌ | ❌ |
 | Bidirectional | ✅ | ✅ | ⚠️ |
 
+## Repository
+
+GitHub: [atharvabaodhankar/toon-config](https://github.com/atharvabaodhankar/toon-config)
+
 ## License
 
 MIT
 
 ## Contributing
 
-Contributions welcome! Please open an issue or PR.
+Contributions welcome! Please open an issue or PR on GitHub.
+
+## Author
+
+Created by [@op_athu_17](https://www.npmjs.com/~op_athu_17)
 
 ---
 

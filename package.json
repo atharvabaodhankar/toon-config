@@ -22,16 +22,16 @@
     "config-parser",
     "config-loader"
   ],
-  "author": "",
+  "author": "op_athu_17",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/toon-config.git"
+    "url": "https://github.com/atharvabaodhankar/toon-config.git"
   },
   "bugs": {
-    "url": "https://github.com/yourusername/toon-config/issues"
+    "url": "https://github.com/atharvabaodhankar/toon-config/issues"
   },
-  "homepage": "https://github.com/yourusername/toon-config#readme",
+  "homepage": "https://github.com/atharvabaodhankar/toon-config#readme",
   "engines": {
     "node": ">=14.0.0"
   },
