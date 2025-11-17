@@ -1,0 +1,48 @@
+{
+  "name": "toon-vscode",
+  "displayName": "TOON Config Language",
+  "description": "Syntax highlighting and language support for TOON (Token-Oriented Object Notation) configuration files",
+  "version": "1.0.1",
+  "publisher": "atharva-baodhankar",
+  "author": "op_athu_17",
+  "license": "MIT",
+  "icon": "icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/atharvabaodhankar/toon-config.git"
+  },
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "keywords": [
+    "toon",
+    "config",
+    "configuration",
+    "syntax",
+    "highlighting"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "toon",
+        "aliases": ["TOON", "toon"],
+        "extensions": [".toon"],
+        "configuration": "./language-configuration.json",
+        "icon": {
+          "light": "./icon.png",
+          "dark": "./icon.png"
+        }
+      }
+    ],
+    "grammars": [
+      {
+        "language": "toon",
+        "scopeName": "source.toon",
+        "path": "./syntaxes/toon.tmLanguage.json"
+      }
+    ]
+  }
+}

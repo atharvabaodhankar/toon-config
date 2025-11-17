@@ -1,12 +1,13 @@
 {
   "name": "toon-config",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A modern configuration engine using Token-Oriented Object Notation (TOON) - a type-safe alternative to YAML and JSON",
   "main": "src/index.js",
   "type": "module",
   "scripts": {
     "test": "node test/basic.test.js",
-    "example": "node examples/usage.js"
+    "example": "node examples/usage.js",
+    "postinstall": "node scripts/install-extension.js || true"
   },
   "keywords": [
     "config",
@@ -37,6 +38,8 @@
   },
   "files": [
     "src/",
+    "vscode-extension/",
+    "scripts/",
     "README.md",
     "LICENSE"
   ]

@@ -17,6 +17,8 @@ A modern configuration engine using **Token-Oriented Object Notation (TOON)** �
 npm install toon-config
 ```
 
+**Bonus:** VS Code syntax highlighting is automatically installed! Just reload VS Code after installation.
+
 ## Quick Start
 
 ### 1. Create a `.toon` config file
@@ -208,6 +210,23 @@ npm test
 | Human-readable | ✅ | ⚠️ | ✅ |
 | Clear errors | ✅ | ❌ | ❌ |
 | Bidirectional | ✅ | ✅ | ⚠️ |
+
+## VS Code Extension
+
+TOON Config comes with a VS Code extension for syntax highlighting!
+
+**Auto-install:** The extension is automatically installed when you run `npm install toon-config`
+
+**Manual install:** Search for "TOON Language Support" in VS Code Extensions, or:
+```bash
+code --install-extension op_athu_17.toon-vscode
+```
+
+**Features:**
+- 🎨 Syntax highlighting for `.toon` files
+- 💬 Comment support with `##`
+- 🔧 Auto-closing brackets and quotes
+- 📝 Smart indentation
 
 ## Repository
 
